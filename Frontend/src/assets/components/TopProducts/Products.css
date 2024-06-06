@@ -1,0 +1,136 @@
+.Cartheader {
+  height: 77px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: 500;
+  background-color: #e2e2e2;
+}
+.Gap {
+  height: 77px;
+}
+
+.ClosePrice {
+  display: flex;
+  justify-content: space-around;
+}
+
+.Tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 50%;
+}
+
+.TabsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.CartButtonwrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-header {
+  width: 100%; /* w-full */
+  height: 5rem; /* h-20 */
+  background-color: #f5f7f7; /* bg-[#F5F7F7] */
+  color: var(--prime-color); /* text-primeColor */
+  display: none; /* hidden */
+  grid-template-columns: repeat(5, 1fr); /* grid-cols-5 */
+  place-content: center; /* place-content-center */
+  padding-left: 1.5rem; /* px-6 */
+  padding-right: 1.5rem; /* px-6 */
+  font-size: 1.125rem; /* text-lg */
+  font-family: var(--title-font); /* font-titleFont */
+  font-weight: 600; /* font-semibold */
+}
+
+@media (min-width: 1024px) {
+  /* lgl: prefix usually means large screens, often >= 1024px */
+  .product-header {
+    display: grid; /* lgl:grid */
+  }
+}
+
+.col-span-2 {
+  grid-column: span 2 / span 2; /* col-span-2 */
+}
+
+.commande-header{
+  width: 100%; /* w-full */
+  height: 5rem; /* h-20 */
+  background-color: #f5f7f7; /* bg-[#F5F7F7] */
+  color: var(--prime-color); /* text-primeColor */
+  display: flex; /* hidden */
+  align-items: center;
+  justify-content: space-around;
+  font-size: 1.4rem; /* text-lg */
+  font-family: var(--title-font); /* font-titleFont */
+  font-weight: 600; /* font-semibold */
+}
+
+.commande-smallheader{
+  height: 5rem; /* h-20 */
+  background-color: #151415;/* bg-[#F5F7F7] */
+  width: 98%;
+  border-radius: 20px;
+  color: var(--prime-color); /* text-primeColor */
+  display: flex; /* hidden */
+  align-items: center;
+  justify-content: space-around;
+  font-size: 1.125rem; /* text-lg */
+  font-family: var(--title-font); /* font-titleFont */
+  font-weight: 600; /* font-semibold */
+}
+@media (min-width: 1024px) {
+  /* lgl: prefix usually means large screens, often >= 1024px */
+  .commande-header {
+    display: flex; /* lgl:grid */
+  }
+}
+
+.buttons_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Total_section{
+display: flex;
+align-items: center;
+justify-content: space-around;
+}
+
+.faq-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.flex-item {
+  flex: 1; /* Each item will take equal space */
+  text-align: center; /* Optional: Center the text inside each item */
+}
+
+
+
+
+.faq-answer{
+width: 90%;}
+
+.faq-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.faq-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

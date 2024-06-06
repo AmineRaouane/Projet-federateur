@@ -1,0 +1,98 @@
+.item-card {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-bottom: 1rem; /* mb-4 */
+    border: 1px solid #e5e7eb; /* Tailwind's default border color */
+    padding: 0.5rem 0; /* py-2 */
+  }
+  
+  .item-details {
+    display: flex;
+    grid-column: span 5;
+    align-items: center;
+    gap: 1rem; /* gap-4 */
+    margin-left: 1rem; /* ml-4 */
+  }
+  
+  @media (min-width: 768px) { /* mdl: prefix usually means medium large screens, often >= 768px */
+    .item-details {
+      grid-column: span 2;
+    }
+  }
+  
+  .delete-icon {
+    color: var(--prime-color); /* text-primeColor */
+    transition: color 0.3s; /* duration-300 */
+    cursor: pointer;
+  }
+  
+  .delete-icon:hover {
+    color: #ef4444; /* hover:text-red-500 */
+  }
+  
+  .product-image {
+    width: 8rem; /* w-32 */
+    height: 8rem; /* h-32 */
+  }
+  
+  .product-name {
+    font-family: var(--title-font); /* font-titleFont */
+    font-weight: 600; /* font-semibold */
+  }
+  
+  .item-info {
+    display: flex;
+    grid-column: span 5;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem 1rem 0; /* py-4 mdl:py-0 px-4 mdl:px-0 */
+    gap: 1.5rem; /* gap-6 */
+  
+    @media (min-width: 768px) {
+      grid-column: span 3;
+      padding: 0;
+      gap: 0;
+    }
+  }
+  
+  .item-price,
+  .item-total {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 600; /* font-semibold */
+  }
+  
+  .item-total {
+    font-family: var(--title-font); /* font-titleFont */
+    font-weight: 700; /* font-bold */
+  }
+  
+  .item-quantity {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* gap-6 */
+    font-size: 1.125rem; /* text-lg */
+  }
+  
+  .quantity-btn {
+    width: 1.5rem; /* w-6 */
+    height: 1.5rem; /* h-6 */
+    background-color: #f3f4f6; /* bg-gray-100 */
+    font-size: 1.5rem; /* text-2xl */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s; /* duration-300 */
+    border: 1px solid #d1d5db; /* border-[1px] border-gray-300 */
+  }
+  
+  .quantity-btn:hover {
+    background-color: #d1d5db; /* hover:bg-gray-300 */
+    border-color: #d1d5db; /* hover:border-gray-300 */
+  }
+  

@@ -1,0 +1,56 @@
+/* Dropdown.css */
+.dropdown-wrapper {
+    position: relative;
+    width: 95%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 20px;
+    overflow: hidden; /* Hide overflow content */
+    transition: height 0.3s; /* Add smooth transition */
+  }
+  
+  .dropdown-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .dropdown-title {
+    font-size: 16px;
+  }
+  
+  .dropdown-icon {
+    font-size: 16px;
+  }
+  
+  .dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%; /* Adjust as needed */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    /* overflow: hidden; Remove this line to display the list items */
+    transition: height 0.3s; /* Add smooth transition */
+  }
+  
+  /* .dropdown-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .dropdown-content li {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .dropdown-content li:hover {
+    background-color: #f1f1f1;
+  } */
+  

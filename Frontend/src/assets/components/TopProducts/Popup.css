@@ -1,0 +1,33 @@
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    position: relative;
+    width: 80%; /* Increase width */
+    max-width: 600px; /* Set a max width */
+    height: 70%; /* Increase height */
+    max-height: 500px; /* Set a max height */
+    overflow-y: auto; /* Add scroll if content overflows */
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+    font-size: 24px; /* Increase font size */
+    cursor: pointer;
+}
