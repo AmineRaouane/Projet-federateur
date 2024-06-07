@@ -3,7 +3,7 @@ import "./Profile.css";
 import api from "../../api";
 import { toast } from "react-toastify";
 
-const ProfileInfo = () => {
+const ProfileInfo = ({setName}) => {
   const [profileDetails, setProfileDetails] = useState({
     user: { username: "", email: "" },
     phone_number: "",
@@ -53,10 +53,10 @@ const ProfileInfo = () => {
     try {
       const response = await api.put("/api/ProfileUpdate/", profileDetails);
       setProfileDetails(response.data); // Update the state with the response data
-      toggleEditMode(); // Toggle edit mode after successful update
+      toggleEditMode();
+      setName(profileDetails.user.username) 
     } catch (error) {
       console.error("Error updating profile:", error);
-      // Handle error gracefully (e.g., display an error message)
     }
 
     toast.success("Profile updated successfully", {

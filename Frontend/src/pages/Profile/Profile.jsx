@@ -66,7 +66,7 @@ const Profile = () => {
   const [selectedDiv, setSelectedDiv] = useState("div1");
   const renderContent = () => {
     if (selectedDiv === "div1") {
-      return <ProfileInfo />;
+      return <ProfileInfo setName={setName}/>;
     } else if (selectedDiv === "div2") {
       return <SubscriptionInfo />;
     } else {

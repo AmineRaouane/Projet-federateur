@@ -13,24 +13,23 @@ const Header = () => {
     setNavActive(!navActive);
   };
 
-  // Function to scroll to the top of the page
   const scrollToTop = () => {
     window.scrollTo(0, 0);
   };
+  
 
   useEffect(() => {
-    auth().catch(() => setIsAuthorized(false));
+    const auth = async () => {
+      const token = localStorage.getItem(ACCESS_TOKEN);
+      if (!token) {
+        setIsAuthorized(false);
+        return;
+      }
+      // Perform any additional checks here if needed
+      setIsAuthorized(true);
+    };
+    auth();
   }, []);
-
-  const auth = async () => {
-    const token = localStorage.getItem(ACCESS_TOKEN);
-    if (!token) {
-      setIsAuthorized(false);
-      return;
-    }
-    // Perform any additional checks here if needed
-    setIsAuthorized(true);
-  };
 
   const handleLogout = () => {
     localStorage.removeItem(ACCESS_TOKEN);
@@ -39,7 +38,7 @@ const Header = () => {
   };
 
   if (isAuthorized === null) {
-    return <div>Loading...</div>;
+    return <div>Loading...</div>; // Show loading state while checking auth status
   }
 
   return (

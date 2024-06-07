@@ -110,7 +110,7 @@ const TopProducts = ({ handleOrder }) => {
                   navigate("/cart");
                 }}
               >
-                Panier <FaShoppingCart />
+                  Cart <FaShoppingCart />
               </div>
               <div
                 className="CartButtonwrapper py-2 px-4 mx-2 bg-gray-200 text-gray-800 rounded-full hover:bg-green-500 hover:text-white"
@@ -154,7 +154,7 @@ const TopProducts = ({ handleOrder }) => {
                   className="hover:scale-105 duration-300 text-white py-1 px-4 rounded-full mt-4 group-hover:bg-white group-hover:text-primary"
                   onClick={() => handleOrderClick(data.id)}
                 >
-                  Ajouter au panier
+                  Add to cart
                 </button>
                 <button
                   className="hover:scale-105 duration-300 text-white py-1 px-4 rounded-full mt-4 bg-blue-500 ml-2"
