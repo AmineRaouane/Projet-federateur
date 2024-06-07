@@ -211,7 +211,7 @@ class SubscriptionUpdateView(generics.UpdateAPIView):
             subscription_serializer.save()
             return Response(subscription_serializer.data)
         else:
-            return Response(subscription_serializer.errors, status=status.HTTP_400_BAD_REQUEST) #type:ignoree
+            return Response(subscription_serializer.errors, status=status.HTTP_400_BAD_REQUEST) #type:ignore
 
 
 #!Stripe paiment
