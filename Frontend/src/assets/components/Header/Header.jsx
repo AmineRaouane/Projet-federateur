@@ -16,25 +16,31 @@ const Header = () => {
   const scrollToTop = () => {
     window.scrollTo(0, 0);
   };
-  
 
   useEffect(() => {
-    const auth = async () => {
+    const checkAuth = async () => {
       const token = localStorage.getItem(ACCESS_TOKEN);
-      if (!token) {
-        setIsAuthorized(false);
-        return;
-      }
-      // Perform any additional checks here if needed
-      setIsAuthorized(true);
+      setIsAuthorized(!!token); // Set authorization based on the presence of a token
     };
-    auth();
+
+    checkAuth();
+
+    // Add event listener to update auth status when localStorage changes
+    const handleStorageChange = () => checkAuth();
+    window.addEventListener('storage', handleStorageChange);
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+    };
   }, []);
 
   const handleLogout = () => {
     localStorage.removeItem(ACCESS_TOKEN);
     setIsAuthorized(false);
     navigate("/login"); // Redirect to login page after logout
+
+    // Notify that the user has logged out
+    window.dispatchEvent(new Event('storage'));
   };
 
   if (isAuthorized === null) {

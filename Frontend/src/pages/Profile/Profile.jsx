@@ -76,7 +76,8 @@ const Profile = () => {
 
   const handleLogout = () => {
     localStorage.removeItem(ACCESS_TOKEN);
-    navigate("/login"); // Redirect to login page after logout
+    navigate("/login");
+    window.dispatchEvent(new Event('storage')); // Redirect to login page after logout
   };
 
   return (

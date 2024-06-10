@@ -44,7 +44,7 @@ class Profile(models.Model):
     lastname = models.CharField(max_length=20, default='unknown')
     age = models.PositiveIntegerField(default=0)
     job = models.CharField(max_length=20, default='unknown')
-    avatar = models.PositiveIntegerField(default=0)
+    avatar = models.PositiveIntegerField(default=5)
 
 class Subscription(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)

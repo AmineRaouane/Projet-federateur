@@ -6,6 +6,7 @@ import { useState } from "react";
 import { IoMdArrowRoundForward } from "react-icons/io";
 import { CgProfile } from "react-icons/cg";
 import plans_description from "../Profile/const";
+import { toast } from "react-toastify";
 
 const Home = (props) => {
   const [faqOpen, setFaqOpen] = useState(null);
@@ -247,35 +248,35 @@ const Home = (props) => {
         <div className="process-steps">
           {/* Modifie les balises 'div' avec la classe 'process-step' */}
           <div className="process-step">
-            <div className="step-number">1</div>
+            <div className="step-number text-black bg-white">1</div>
             <h3 style={{ fontWeight: "bold", fontSize: "1.2rem" }}>Order</h3>
             <p>Order your card</p>
           </div>
           <div className="Arrow-div">
-            <IoMdArrowRoundForward size="2em" />
+            <IoMdArrowRoundForward size="3em" />
           </div>
           <div className="process-step">
-            <div className="step-number">2</div>
+            <div className="step-number text-black bg-white">2</div>
             <h3 style={{ fontWeight: "bold", fontSize: "1.2rem" }}>
               Confirmation
             </h3>
             <p>We confirm your order</p>
           </div>
           <div className="Arrow-div">
-            <IoMdArrowRoundForward size="2em" />
+            <IoMdArrowRoundForward size="3em" />
           </div>
           <div className="process-step">
-            <div className="step-number">3</div>
+            <div className="step-number text-black bg-white">3</div>
             <h3 style={{ fontWeight: "bold", fontSize: "1.2rem" }}>
               Delivery{" "}
             </h3>
             <p>Receive your card at home</p>
           </div>
           <div className="Arrow-div">
-            <IoMdArrowRoundForward size="2em" />
+            <IoMdArrowRoundForward size="3em" />
           </div>
           <div className="process-step">
-            <div className="step-number">4</div>
+            <div className="step-number text-black bg-white">4</div>
             <h3 style={{ fontWeight: "bold", fontSize: "1.2rem" }}>
               Lifestyle
             </h3>
@@ -283,8 +284,8 @@ const Home = (props) => {
           </div>
         </div>
         <div className="button-row mt-2" style={{ textAlign: "center" }}>
-          <button className="carousel-btn rounded text-white orng-btn">
-            <Link to="/register">Order Now</Link>
+          <button className="carousel-btn rounded text-white orng-btn" onClick={() => (toast.success("Order done we gonna contact you soon"))}>
+            Order Now
           </button>
         </div>
       </section>
