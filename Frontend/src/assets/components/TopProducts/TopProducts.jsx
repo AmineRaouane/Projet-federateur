@@ -21,7 +21,7 @@ const TopProducts = ({ handleOrder }) => {
     getProducts();
   }, []);
 
-  const getProducts = () => {
+  const getProducts = () => {//? get all products from the database
     api
       .get("/api/products/")
       .then((res) => res.data)
@@ -39,19 +39,17 @@ const TopProducts = ({ handleOrder }) => {
   const handleOrderClick = (productId) => {
     const token = localStorage.getItem(ACCESS_TOKEN);
     if (!token) {
-      // If the user is not logged in, redirect them to the login page
+      //? If the user is not logged in, redirect them to the login page
       navigate("/login");
       return;
     }
 
     api
-      .post("api/products/panieraddproduct/", {
+      .post("api/products/panieraddproduct/", {//? add product to the cart
         product: productId,
         quantity: 1,
       })
       .then((response) => {
-        console.log(response.data.message);
-        console.log("Added product to panier");
         toast.success("Product added to cart", {
           autoClose: 2000,
         });

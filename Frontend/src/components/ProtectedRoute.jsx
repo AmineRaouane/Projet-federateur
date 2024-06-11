@@ -30,14 +30,14 @@ function ProtectedRoute({ children }) {
         }
     };
 
-    const auth = async () => {
+    const auth = async () => { //? Check if the user is authorized
         const token = localStorage.getItem(ACCESS_TOKEN);
         if (!token) {
             setIsAuthorized(false);
             return;
         }
-        const decoded = jwtDecode(token);
-        const tokenExpiration = decoded.exp;
+        const decoded = jwtDecode(token); //? Decode the token
+        const tokenExpiration = decoded.exp; //? Get the expiration time of the token
         const now = Date.now() / 1000;
 
         if (tokenExpiration < now) {

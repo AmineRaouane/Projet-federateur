@@ -5,8 +5,8 @@ import { useState, useEffect } from "react";
 import { ACCESS_TOKEN } from "../../../constants";
 
 const Header = () => {
-  const [navActive, setNavActive] = useState(false);
-  const [isAuthorized, setIsAuthorized] = useState(null);
+  const [navActive, setNavActive] = useState(false); //? State to toggle the navbar/sidebar
+  const [isAuthorized, setIsAuthorized] = useState(null); //? State to check if the user is authorized
   const navigate = useNavigate();
 
   const toggleNav = () => {
@@ -17,20 +17,17 @@ const Header = () => {
     window.scrollTo(0, 0);
   };
 
-  useEffect(() => {
+  useEffect(() => { //? Check if the user is authorized
     const checkAuth = async () => {
       const token = localStorage.getItem(ACCESS_TOKEN);
-      setIsAuthorized(!!token); // Set authorization based on the presence of a token
+      setIsAuthorized(!!token); //? Set authorization based on the presence of a token
     };
-
     checkAuth();
-
-    // Add event listener to update auth status when localStorage changes
-    const handleStorageChange = () => checkAuth();
+    //? Add event listener to update auth status when localStorage changes
+    const handleStorageChange = () => checkAuth(); //? Check auth status when localStorage changes
     window.addEventListener('storage', handleStorageChange);
-
     return () => {
-      window.removeEventListener('storage', handleStorageChange);
+      window.removeEventListener('storage', handleStorageChange); //? Remove event listener when component unmounts to prevent memory leaks and bugs
     };
   }, []);
 
@@ -38,7 +35,7 @@ const Header = () => {
     localStorage.removeItem(ACCESS_TOKEN);
     setIsAuthorized(false);
     navigate("/login"); // Redirect to login page after logout
-
+    
     // Notify that the user has logged out
     window.dispatchEvent(new Event('storage'));
   };

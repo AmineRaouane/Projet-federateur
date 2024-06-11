@@ -1,6 +1,7 @@
 import "./Contact.css";
 import { useState } from "react";
 import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -27,8 +28,7 @@ const Contact = () => {
       subject: "",
       message: "",
     });
-
-    alert("Message Send Successfully");
+    toast.success("Message Send Successfully");
   };
   return (
     <div className="contact-wrapper">

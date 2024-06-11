@@ -63,8 +63,22 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/register" element={<RegisterAndLogout />} />
-          <Route path="/cart" element={<ShoppingCart />} />
-          <Route path="/Commandes" element={<Commandes />} />
+          <Route
+            path="/cart"
+            element={
+              <ProtectedRoute>
+                <ShoppingCart />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/Commandes"
+            element={
+              <ProtectedRoute>
+                <Commandes />
+              </ProtectedRoute>
+            }
+          />
           <Route path="/classes" element={<Classes />} />
           <Route path="/trainers" element={<Trainers TeamCard={TeamCard} />} />
           <Route path="/contact" element={<Contact />} />

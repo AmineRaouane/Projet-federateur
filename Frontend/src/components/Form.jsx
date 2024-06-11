@@ -33,10 +33,10 @@ function Form({ route, method }) {
         localStorage.setItem(ACCESS_TOKEN, res.data.access);
         localStorage.setItem(REFRESH_TOKEN, res.data.refresh);
         toast.success("Login successful");
-        navigate("/"); // Redirect to home page after login
+        navigate("/"); //? Redirect to home page after login
 
-        // Notify header to update authorization state
-        window.dispatchEvent(new Event('storage'));
+        //? Notify header to update authorization state
+        window.dispatchEvent(new Event('storage')); //? Dispatch event to update header
       } else {
         toast.success("Registration successful, please login");
         navigate("/login");
@@ -59,7 +59,7 @@ function Form({ route, method }) {
           onChange={(e) => setUsername(e.target.value)}
           placeholder="Username"
         />
-        {method === "Register" && (
+        {method === "Register" && ( //? Show email field only for registration
           <input
             className="form-input"
             type="email"
@@ -75,7 +75,7 @@ function Form({ route, method }) {
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
         />
-        {method === "Register" && (
+        {method === "Register" && (//? Show confirm password field only for registration
           <input
             className="form-input"
             type="password"
